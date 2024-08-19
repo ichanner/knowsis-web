@@ -13,6 +13,7 @@ const CoversGrid = () => {
 
 
 	// Logan
+	// this is another comment for testing
 
 	const ROW_HEIGHT = 400
 	const MIN_COLUMN_WIDTH = 250; // Minimum column width to ensure usability
