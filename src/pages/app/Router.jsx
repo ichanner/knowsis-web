@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Routes, Route } from "react-router-dom";
-import Library from "./Library"
+import Home from "./Home"
 
 /**
  * Application Router
@@ -8,7 +8,7 @@ import Library from "./Library"
  * This component handles routing for a specific part of the application.
  * 
  * - The `Routes` component from React Router is used to define the route structure.
- * - Currently, it defines a single route (`/`) that renders the `Library` component.
+ * - Currently, it defines a single route (`/`) that renders the `Home` component.
  * - In the future, more routes will be defined.
  * 
  * Usage:
@@ -23,7 +23,7 @@ export default(()=>{
 
 		<Routes>
 
-			<Route path="/" element={ <Library/> }/>
+			<Route path="/:library_id" element={ <Home/> }/>
 
 		</Routes>
 		

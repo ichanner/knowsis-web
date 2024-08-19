@@ -22,13 +22,13 @@ const authReducer = createSlice({
 const selectAuthState = (state) => state.auth;
 
 // Selector to check if the user is authenticated
-export const selectIsAuthenticated = createSelector( 
-	[selectAuthState], 
+export const selectIsAuthenticated = createSelector( [selectAuthState], 
+	
 	(authState) => authState.isAuthenticated
 );
 // Selector to get the current user
-export const selectUser = createSelector( 
-	[selectAuthState], 
+export const selectUser = createSelector( [selectAuthState], 
+	
 	(authState) => authState.user 
 );
 
