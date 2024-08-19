@@ -13,10 +13,9 @@ const coversReducer = createSlice({
 			'1': [
 
 
-				{ id: '123', cover_url: 'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/book-cover-design-template-fd68f626887a20ec0eb2900fb1d979c3_screen.jpg?ts=1636985790', progress: 80  },
-				{ id: '123', cover_url: 'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/book-cover-design-template-fd68f626887a20ec0eb2900fb1d979c3_screen.jpg?ts=1636985790', progress: 80  },
-				{ id: '123', cover_url: 'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/book-cover-design-template-fd68f626887a20ec0eb2900fb1d979c3_screen.jpg?ts=1636985790', progress: 80  }
-
+					{ id: '123', cover_url: 'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/book-cover-design-template-fd68f626887a20ec0eb2900fb1d979c3_screen.jpg?ts=1636985790', progress: 89  },
+					{ id: '124', cover_url: 'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/book-cover-design-template-fd68f626887a20ec0eb2900fb1d979c3_screen.jpg?ts=1636985790', progress: 20  },
+					{ id: '126', cover_url: 'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/book-cover-design-template-fd68f626887a20ec0eb2900fb1d979c3_screen.jpg?ts=1636985790', progress: 60  }
 
 				]
 		},

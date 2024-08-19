@@ -16,11 +16,11 @@ export default ({style, library_id, cover_id}) => {
 
 				<div className='cover-container'>
 
-					<img className='cover-image'  src={cover.cover_url}  />
+					<img className='cover-image' src={cover.cover_url}  />
 
 					<div className='cover-progress-bar-container'>
 
-						<div className='cover-progress-bar'/>
+						<div  className='cover-progress-bar' style={{width: `${cover.progress}%`}}/>
 
 					</div>
 					
