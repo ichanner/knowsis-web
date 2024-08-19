@@ -12,6 +12,8 @@ import Cover from "./Cover.jsx"
 const CoversGrid = () => {
 
 
+	// Logan
+
 	const ROW_HEIGHT = 400
 	const MIN_COLUMN_WIDTH = 250; // Minimum column width to ensure usability
 
