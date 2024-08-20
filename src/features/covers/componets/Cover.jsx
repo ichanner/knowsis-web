@@ -10,9 +10,6 @@ export default ({style, library_id, cover_id}) => {
 
 	const cover = useSelector(state => selectCoverById(state, library_id, cover_id))
 
-//ian 
-//another
-
 	return (
 
 		<div style={{...style, display: 'flex', justifyContent: 'center'}}>
