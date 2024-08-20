@@ -16,7 +16,6 @@ export default ({style, library_id, cover_id}) => {
 
 	const cover = useSelector(state => selectCoverById(state, library_id, cover_id))
 
-
 	return (
 
 		<div style={{...style, display: 'flex', justifyContent: 'center'}}>
@@ -26,7 +25,7 @@ export default ({style, library_id, cover_id}) => {
 				<img className='cover-image' src={cover.cover_url}  />
 					
 				
-				<div className='hover-top_buttons'>
+				<div className='hover-center_buttons'>
                     <Icon
                         className='hover-settings-button'
                         path={mdiCog}
@@ -34,10 +33,8 @@ export default ({style, library_id, cover_id}) => {
                         color="white"
                         onClick={() => console.log('Settings button clicked!')}
                     />
-                </div>
 
-				<div className='hover-center_buttons'>
-                    <Icon
+                    <Icon              
                         className='hover-play-button'
                         path={mdiBookPlay}
                         size={2}
@@ -45,6 +42,8 @@ export default ({style, library_id, cover_id}) => {
                         onClick={() => console.log('Play button clicked!')}
                     />
                 </div>
+
+	
 				
 				
 					<div className='cover-progress-bar-container'>
