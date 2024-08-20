@@ -27,11 +27,6 @@
 	border-top-right-radius: 2%;
 }
 
-.cover-image:hover{
-
-	opacity: 0.8;
-	cursor: pointer;
-}
 
 .cover-progress-bar{ 
 
@@ -50,4 +45,80 @@
 
 	width: 100%;
 	height: 100%;
+}
+
+
+/* Hover Styling */
+
+/* Display buttons on hover */
+.cover-container:hover .hover-center_buttons,
+.cover-container:hover .hover-top_buttons {
+    display: flex;
+}
+
+
+.cover-image:hover {
+    opacity: 0.8;
+    cursor: pointer;
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+
+
+/* Settings Button Container - Top Right */
+.hover-top_buttons {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start; /* Align items to the top */
+    align-items: flex-end; /* Align items to the right */
+}
+
+
+/* Settings Button */
+.hover-settings-button {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 10px; /* Adjusted for top alignment */
+    right: 10px; /* Adjusted for right alignment */
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+    cursor: pointer;
+}
+
+.hover-settings-button:hover {
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+
+/* Play Button Container - Centered */
+.hover-center_buttons {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Play Button */
+
+.hover-play-button {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+    cursor: pointer;
+}
+
+
+.hover-play-button:hover {
+    transform: scale(1.1); /* Scale up on hover */
 }
