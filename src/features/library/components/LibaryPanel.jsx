@@ -2,19 +2,22 @@ import "./styles.css"
 
 import React, { useEffect, useState, useCallback, useRef } from 'react'
 import { mdiMagnify, mdiPlus, mdiBookMultiple } from '@mdi/js'
+import { useSelector, useDispatch } from 'react-redux'
+import { setExpanded, selectListExpanded } from "../librarySlice.js"
 import { Icon } from "@mdi/react"
 import Collapse from '@mui/material/Collapse'
 import LibraryList from "./LibraryList"
 
 export default () => {
 
-  const [ expanded, setExpanded ] = useState(true)
+  const dispatch = useDispatch()
+  const expanded = useSelector(selectListExpanded)
 
   return (
 
       <div>
 
-        <Collapse orientation="horizontal" in={expanded} >
+        <Collapse collapsedSize='90px' timeout={0} orientation="horizontal" in={expanded} >
        
           <div className='libary__container'>
 
@@ -22,11 +25,11 @@ export default () => {
 
               <div className='library-panel__header' >
 
-                <div onClick={()=>setExpanded(!expanded)} className='library-panel__group'>
+                <div onClick={()=>dispatch(setExpanded(!expanded))} className='library-panel__group'>
 
-                  <Icon onClick={()=>setExpanded(!expanded)} className='library-panel__icon' path={mdiBookMultiple} />
+                  <Icon className='library-panel__icon' path={mdiBookMultiple} />
           
-                  <div className='library-panel__label'> Library </div>
+                  { expanded &&  <div className='library-panel__label'> Library </div> }
               
                 </div>
 
@@ -42,11 +45,9 @@ export default () => {
 
             </div>
 
-            <LibraryList/>
-
-
+             <LibraryList/>
+           
           </div>
-
 
         </Collapse>
 

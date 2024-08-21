@@ -14,6 +14,7 @@
 }
 
 .library-panel__header {
+
   padding: 0.5rem; /* Increased padding for better spacing */
   margin-right: 2.5rem; /* Slightly reduced margin for better balance */
 }
@@ -78,8 +79,8 @@
 .library-panel__btn {
   border-radius: .625rem;
   padding: .325rem;
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 1.2rem;
+  width: 1.2rem;
   color: var(--white);
 }
 
@@ -89,14 +90,14 @@
 }
 
 .library-panel__label {
-  font-size: 1rem;
+  font-size: 1.2rem;
   padding: 0 0 0 .5rem;
   color: var(--white);
 }
 
 .library-panel__icon {
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 1.8rem;
+  width: 1.8rem;
   color: var(--white);
 }
 
@@ -115,7 +116,21 @@
   border-radius: 0.625rem;
 }
 
-.library-tab__container:hover {
+.library-tab__container--collapsed {
+
+   padding: .4rem;
+   border-radius:  0.625rem;
+   width: 50px; /* image bust be a 50x50 */
+   display: flex
+}
+
+.library-tab__container--collapsed:hover, .library-tab__container--collapsed--selected {
+
+  background-color: var(--gray-800);
+}
+
+.library-tab__container:hover, .library-tab__container--selected {
+  
   cursor: pointer;
   background-color: var(--gray-800); /* Add background color if needed */
 

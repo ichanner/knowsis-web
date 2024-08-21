@@ -7,16 +7,23 @@
    flex-direction: column;
    align-items: flex-start;
    margin: 1rem;
-   overflow: hidden;
 }
 
 .cover-container{
 
+    position: relative;
     display: flex;
     flex-direction: column;
 	height: 95%;
 	width: 95%;
+    margin-top:.5rem;
     max-width: 250px;
+}
+
+.cover-container:hover{
+
+    cursor: pointer;
+    opacity: 0.8;
 }
 
 .cover-image{
@@ -26,7 +33,6 @@
 	border-top-left-radius: 2%;
 	border-top-right-radius: 2%;
 }
-
 
 .cover-progress-bar{ 
 
@@ -47,25 +53,19 @@
 	height: 100%;
 }
 
-
 /* Hover Styling */
 
 /* Display buttons on hover */
 .cover-container:hover .hover-center_buttons {
+
     display: flex;
 }
-
 
 .cover-image:hover {
     opacity: 0.8;
     cursor: pointer;
     transition: opacity 0.3s ease; /* Smooth transition for opacity */
 }
-
-
-
-
-
 
 
 /* Hover Container - Centered */
@@ -83,30 +83,32 @@
 /* Play Button */
 
 .hover-play-button {
-    width: 32px;
-    height: 32px;
     position: absolute;
- 
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
-    cursor: pointer;
+    height: 2.4rem;
+    width: 2.4rem;
+    color: var(--white);
 }
 
 
 .hover-play-button:hover {
     transform: scale(1.1); /* Scale up on hover */
+    cursor: pointer;
 }
 
 /* Settings Button */
 .hover-settings-button {
-    width: 30px;
-    height: 30px;
+    height: 1.4rem;
+    width: 1.4rem;
     position: absolute;
-    top: 10px; /* Adjusted for top alignment */
-    right: 10px; /* Adjusted for right alignment */
+    color: var(--white);
+    top: -2px; /* Adjusted for top alignment */
+    right: -2px; /* Adjusted for right alignment */
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
-    cursor: pointer;
+    
 }
 
 .hover-settings-button:hover {
     transform: scale(1.1); /* Scale up on hover */
+    cursor: pointer;
 }

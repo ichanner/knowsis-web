@@ -9,11 +9,12 @@ const TAB_HEIGHT = 100;
 
 const LibraryList = () => {
 
+	const params = useParams()
 	const library = useSelector(selectLibraries)
 
 	return (
 
-	    <div>
+	    <>
 
 	      { library.length > 0 ?
 
@@ -24,14 +25,14 @@ const LibraryList = () => {
 	          itemCount={library.length}
 	          
 	        >
-
 	        	{ 	
 
 	        		({index, style}) => {
 
 	        			const library_id = library[index]
+	        			const is_focused = params.library_id == library_id
 
-	        			return <LibraryTab library_id={library_id}/>
+	        			return <LibraryTab is_focused={is_focused} library_id={library_id}/>
 	        		}
 	        	}
 
@@ -39,7 +40,7 @@ const LibraryList = () => {
 
 	      }
 
-	    </div>
+	    </>
 
   	);
 
