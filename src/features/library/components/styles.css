@@ -46,7 +46,6 @@
 
 .library-panel__label {
   font-size: 1.2rem; /* Reduced font size slightly for better alignment */
-  padding: 0 0 0 0.75rem; /* Adjusted padding for better spacing */
   color: var(--white);
 
 }
@@ -54,6 +53,7 @@
 .library-panel__icon {
   height: 1.5rem;
   width: 1.5rem;
+  margin:.4rem;
   color: var(--white);
 }
 
