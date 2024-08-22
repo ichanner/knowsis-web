@@ -47,7 +47,7 @@
 .library-panel__label {
   font-size: 1.2rem; /* Reduced font size slightly for better alignment */
   color: var(--white);
-
+  
 }
 
 .library-panel__icon {
@@ -127,6 +127,7 @@
 .library-tab__container--collapsed:hover, .library-tab__container--collapsed--selected {
 
   background-color: var(--gray-800);
+  cursor: pointer;
 }
 
 .library-tab__container:hover, .library-tab__container--selected {

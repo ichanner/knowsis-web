@@ -4,8 +4,10 @@ import "./styles.css"
 import React from 'react'
 import { useSelector } from 'react-redux';
 import { selectCoverById } from '../coverSlice';
+import { mdiDotsHorizontalCircle, mdiPlay, mdiBookPlay, mdiBookEdit, mdiImageEdit, mdiLinkVariant, mdiRestart, mdiCheckCircleOutline, mdiCheckCircle, mdiDelete } from '@mdi/js';
 import Icon from "@mdi/react";
-import { mdiDotsHorizontalCircle, mdiPlay, mdiBookPlay } from '@mdi/js';
+import DropDownButton from "../../../components/Dropdown/DropDownButton"
+import DropDownInput from "../../../utils/DropdownInput"
 
 export default ({style, library_id, cover_id}) => {
 
@@ -21,23 +23,29 @@ export default ({style, library_id, cover_id}) => {
 						
 					<div className='hover-center_buttons'>
 	                  
-	                    <Icon
-	                        className='hover-settings-button'
-	                        path={mdiDotsHorizontalCircle}
-	                        onClick={() => console.log('Settings button clicked!')}
+	                    <DropDownButton
+
+	                        open_icon_classname='hover-settings-button'
+	                        open_icon_path={mdiDotsHorizontalCircle}
+	                        buttons={[
+
+	                        	DropDownInput("Change Cover", mdiBookEdit),
+	                        	DropDownInput("Copy Link", mdiLinkVariant),
+	                        	DropDownInput("Mark Read", mdiCheckCircleOutline),
+	                        	DropDownInput("Reset Progress", mdiRestart, true, true),
+	                        	DropDownInput("Remove Book", mdiDelete, false, true)
+
+	                        ]}
 	                    />
 
-	                    <Icon              
-	                        className='hover-play-button'
-	                        path={mdiBookPlay}
-	                        onClick={() => console.log('Play button clicked!')}
-	                    />
+	                    <Icon className='hover-play-button' path={mdiBookPlay} />
 
 	                </div>
 					
 					<div className='cover-progress-bar-container'>
 
 						<div className='cover-progress-bar' style={{width: `${cover.progress}%`}}/>
+
 
 					</div>
 					

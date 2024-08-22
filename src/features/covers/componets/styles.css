@@ -38,6 +38,7 @@
 
     background-color: var(--red-500);
     height:100%;
+    background: var(red-500)
 }
 
 .cover-progress-bar-container{
@@ -46,6 +47,8 @@
     height:1%;
 	background-color: var(--gray-400);
 }
+
+
 
 .auto-sizer{
 
