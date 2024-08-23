@@ -1,3 +1,5 @@
+
+
 import React from "react"
 import { FixedSizeList as List } from "react-window"
 import { useParams } from "react-router-dom"
@@ -5,6 +7,7 @@ import { useSelector } from "react-redux"
 import { selectLibraries, selectPending } from "../librarySlice.js"
 import LibraryTab from "./LibraryTab"
 
+//Todo move to constants file 
 const TAB_HEIGHT = 100;
 
 const LibraryList = () => {
@@ -14,7 +17,7 @@ const LibraryList = () => {
 
 	return (
 
-	    <>
+	    <React.Fragment>
 
 	      { library.length > 0 ?
 
@@ -40,7 +43,7 @@ const LibraryList = () => {
 
 	      }
 
-	    </>
+	    </React.Fragment>
 
   	);
 

@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom'
 import { FixedSizeGrid as Grid } from 'react-window';
 import { selectCoversFromLibrary } from "../coverSlice.js"
 import Cover from "./Cover.jsx"
-
+import Header from "./Header/Header.jsx"
 
 const CoversGrid = () => {
 
@@ -16,8 +16,10 @@ const CoversGrid = () => {
 	// this is another comment for testing
 	// Roger that Logan
 	
-	const ROW_HEIGHT = 400
-	const MIN_COLUMN_WIDTH = 250; // Minimum column width to ensure usability
+
+	//TODO move to constants file
+	const ROW_HEIGHT = 350
+	const MIN_COLUMN_WIDTH = 200; // Minimum column width to ensure usability
 
 	const { library_id } = useParams();
 	const covers = useSelector(state => selectCoversFromLibrary(state, library_id));
@@ -25,6 +27,9 @@ const CoversGrid = () => {
 	return (
 
 		<div className='cover-list-container'>
+
+
+			<Header/>
 
 			<AutoSizer className='auto-sizer'>
 

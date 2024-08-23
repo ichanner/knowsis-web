@@ -5,14 +5,8 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import { styled } from '@mui/material/styles';
 
-//These suck so I'm going to avoid mui as much as possible
 
-const StyledMenu= styled(Menu)(({ theme }) => ({
-  '& .MuiPaper-root': {
-    backgroundColor: 'var(--gray-900)'
-  }
-}))
-
+// move to css file e
 const StyledMenuItem = styled(MenuItem)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
@@ -24,18 +18,24 @@ const StyledMenuItem = styled(MenuItem)(({ theme }) => ({
   },
 }));
 
-export default ({buttons, handleClose, open, anchor_el}) => {
+export default (props) => {
+  
+  const {buttons, handleClose, open, anchor_el, anchor_orgin_vertical} = props
+
+
 
   return (
 
-    <StyledMenu 
+
+    <Menu 
 
       id="menu-list-grow"
+      className='dropdown-menu'
       placement="right"
       anchorEl={anchor_el}
       open={open}
       onClose={handleClose}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      anchorOrigin={{ vertical: anchor_orgin_vertical, horizontal: 'right' }}
       transformOrigin={{ vertical: 'top', horizontal: 'right' }} 
     >
 
@@ -47,7 +47,20 @@ export default ({buttons, handleClose, open, anchor_el}) => {
 
            { button.new_section && <div className='divider'/> }
 
-            <StyledMenuItem onClick={(e)=>e.stopPropagation()} sx={button.serious ? {'& > *': {color: 'var(--red-500)'}} : {}} /*onClick={button.callback}*/>
+            <StyledMenuItem 
+
+              className="dropdown-menu-item" 
+            
+              sx={button.serious ? {'& > *': {color: 'var(--red-500)'}} : {}} 
+            
+              onClick={ (e) => {
+
+                button.callback()
+                handleClose(e)
+
+              }}
+             
+            >
 
               <div className='item-label'> {button.label} </div>
 
@@ -61,7 +74,7 @@ export default ({buttons, handleClose, open, anchor_el}) => {
         ))
       }
 
-    </StyledMenu>
+    </Menu>
 
    
   );

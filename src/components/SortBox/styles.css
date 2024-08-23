@@ -1,0 +1,31 @@
+.sort-box-container{
+
+	display: flex;
+	background-color: var(--sort-box-bg-color); /*750*/
+	border-radius: 10px;
+	justify-content: center;
+	align-items: center;
+    padding: 1rem;
+    height: .5rem;
+}
+
+.sort-box-container:hover{
+
+	cursor: pointer;
+    background-color: var(--sort-box-hover-color); /*700*/
+
+}
+
+.sort-box-icon{
+
+	color: var(--sort-box-color);
+	width: 1.5rem;
+	height: 1.5rem;
+	margin-left: .5rem;
+}
+
+.sort-box-label{
+
+	color: var(--sort-box-color);
+	font-size:1.1rem;
+}

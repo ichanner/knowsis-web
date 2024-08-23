@@ -1,7 +1,7 @@
 import "./styles.css"
 
 import React, { useCallback } from "react"
-import { selectListExpanded } from "../librarySlice.js"
+import { selectListExpanded } from "../uiSlice.js"
 import { useSelector } from "react-redux"
 import { selectLibraryById } from "../librarySlice.js"
 import { useNavigate } from "react-router-dom"

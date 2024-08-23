@@ -13,10 +13,29 @@
   height: 100vh;
 }
 
+
+.library-search-colors {
+
+  --input-color: var(--gray-500); 
+  --input-bg-color: var(--gray-800); 
+  --icon-size: 1.5rem;
+  --font-size:1rem;
+}
+
+.library-search-container{
+
+  margin-bottom: .5rem;
+  display: flex;
+  flex-direction: row;
+}
+
 .library-panel__header {
 
+  display: flex;
+  flex-direction: row;
+  width:100%;
+  justify-content: space-between;
   padding: 0.5rem; /* Increased padding for better spacing */
-  margin-right: 2.5rem; /* Slightly reduced margin for better balance */
 }
 
 .library-panel__container {
@@ -33,6 +52,7 @@
 
 .library-panel__btn {
   border-radius: .625rem;
+  margin-left: .5rem;
   padding: 0.4rem; /* Slightly increased padding for better visual balance */
   height: 1.3rem; /* Increased height for more proportionate buttons */
   width: 1.3rem; /* Increased width for more proportionate buttons */
@@ -53,7 +73,7 @@
 .library-panel__icon {
   height: 1.5rem;
   width: 1.5rem;
-  margin:.4rem;
+  margin-right:.1rem;
   color: var(--white);
 }
 
@@ -95,6 +115,7 @@
   color: var(--white);
 }
 
+
 .library-panel__icon {
   height: 1.8rem;
   width: 1.8rem;
@@ -113,7 +134,7 @@
   display: flex;
   align-items: center; /* Center the content vertically */
   padding: 0.625rem;
-  border-radius: 0.625rem;
+  border-radius: 0.125rem;
 }
 
 .library-tab__container--collapsed {

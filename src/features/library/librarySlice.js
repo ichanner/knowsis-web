@@ -27,10 +27,6 @@ const librarySlice = createSlice({
 
 	reducers: {
 
-		setExpanded: (state, action) => {
-
-			state.list_expanded = action.payload
-		}
 	}
 
 })
@@ -38,12 +34,9 @@ const librarySlice = createSlice({
 
 const selectLibraryState = (state) => state.library
 
-export const { setExpanded } = librarySlice.actions;
-
 export const selectError = createSelector([selectLibraryState], (libraryState) => libraryState.error)
 export const selectPending = createSelector([selectLibraryState], (libraryState) => libraryState.pending)
 export const selectLibraries = createSelector([selectLibraryState], (libraryState) => libraryState.library?.map(({id})=> id))
-export const selectListExpanded = createSelector([selectLibraryState], (libraryState) => libraryState.list_expanded)
 
 export const selectLibraryById = (libraryId) => createSelector( [selectLibraryState],
 

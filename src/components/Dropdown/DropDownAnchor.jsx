@@ -5,7 +5,7 @@ import IconButton from '@mui/material/IconButton';
 import DropDown from "./DropDown"
 import classNames from "classnames"
 
-export default ({buttons, onClose, open_icon_path, open_icon_classname}) => {
+export default ({buttons, onClose, AnchorEl, anchor_orgin_vertical}) => {
 
   const [anchor_el, setAnchorEl] = useState(null);
   const open = Boolean(anchor_el);
@@ -22,30 +22,30 @@ export default ({buttons, onClose, open_icon_path, open_icon_classname}) => {
 
     event.stopPropagation();
     
+    setAnchorEl(null);
+
+
     if(onClose) {
 
       onClose();
     }
   
-    setAnchorEl(null);
   };
+
+
 
   return (
 
     <React.Fragment>
-    
-      <Icon 
-
-        onClick={handleClick} 
-        path={open_icon_path} 
-        className={open_icon_classname}
-
-      /> 
+      
+        
+      <AnchorEl onClick={handleClick}/> 
 
       <DropDown 
 
         open={open} 
         anchor_el={anchor_el} 
+        anchor_orgin_vertical={anchor_orgin_vertical}
         handleClose={handleClose} 
         buttons={buttons}
 

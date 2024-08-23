@@ -20,11 +20,6 @@
     max-width: 250px;
 }
 
-.cover-container:hover{
-
-    cursor: pointer;
-    opacity: 0.8;
-}
 
 .cover-image{
 
@@ -43,10 +38,12 @@
 
 .cover-progress-bar-container{
 	
+    position: relative;
 	width:100%;
     height:1%;
 	background-color: var(--gray-400);
 }
+
 
 
 
@@ -70,6 +67,26 @@
     transition: opacity 0.3s ease; /* Smooth transition for opacity */
 }
 
+
+.cover-timestamp-container{
+
+    position: absolute;
+    border-radius: 3px;
+    right: 5%;
+    bottom: 3%;
+    padding: .1rem;
+    background-color: rgba(50,50,50,.5);
+
+}
+
+
+.cover-timestamp-text{
+    
+    text-align: center; 
+    pointer-events: none;
+    color: var(--gray-100);
+    font-size: .4rem;
+}
 
 /* Hover Container - Centered */
 .hover-center_buttons {

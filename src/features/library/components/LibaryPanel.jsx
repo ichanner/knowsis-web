@@ -1,12 +1,13 @@
 import "./styles.css"
 
 import React, { useEffect, useState, useCallback, useRef } from 'react'
-import { mdiMagnify, mdiPlus, mdiBookMultiple } from '@mdi/js'
+import { mdiSortVariant, mdiArrowCollapseAll, mdiMagnify, mdiArrowLeft, mdiPlus, mdiBookMultiple } from '@mdi/js'
 import { useSelector, useDispatch } from 'react-redux'
-import { setExpanded, selectListExpanded } from "../librarySlice.js"
+import { setExpanded, selectListExpanded } from "../uiSlice.js"
 import { Icon } from "@mdi/react"
 import Collapse from '@mui/material/Collapse'
 import LibraryList from "./LibraryList"
+import SearchBox from "../../../components/SearchBox/SearchBox"
 
 export default () => {
 
@@ -33,19 +34,37 @@ export default () => {
               
                 </div>
 
-              </div>
 
-              <div className='library-panel__group'>
+                { expanded && <div className='library-panel__group'>
+                    
+                    <Icon className='library-panel__btn'  path={mdiPlus} />
 
-                <Icon className='library-panel__btn' path={mdiMagnify} />
-                
-                <Icon className='library-panel__btn' path={mdiPlus} />
+                     <Icon className='library-panel__btn' path={mdiArrowCollapseAll} />
+
+                  </div>
+
+                }
 
               </div>
 
             </div>
 
-             <LibraryList/>
+
+            { expanded &&  <div className='library-search-container'>
+
+                  <SearchBox 
+
+                     placeholder="Search Library" 
+                     full_width={true}
+                     color_scheme='library-search-colors' 
+
+                  />
+
+
+              </div>
+            }
+
+            <LibraryList/>
            
           </div>
 
