@@ -13,7 +13,7 @@ const CoverHeader = () => {
 
 				<img className='header-banner-cover' src='https://as1.ftcdn.net/v2/jpg/03/22/86/48/1000_F_322864892_a9akJpH9ilrHakt2xsWyL2FiPm7KAS9b.jpg' />
 
-				<div >
+				<div>
 
 					<h1 className='header-banner-title'> Math </h1>
 
@@ -28,8 +28,9 @@ const CoverHeader = () => {
 						<div> 45 Documents </div>
 
 					</div>
-
+					
 				</div>
+
 
 			</div>
 
