@@ -28,10 +28,11 @@ const CoversGrid = () => {
 
 		<div className='cover-list-container'>
 
-
 			<Header/>
 
+
 			<AutoSizer className='auto-sizer'>
+
 
 				{({height, width}) => {
 
@@ -39,13 +40,14 @@ const CoversGrid = () => {
                     const columnWidth = width / columnCount; // Divide available width equally among columns
                     const rowCount = Math.ceil(covers.length / columnCount);
 
-
 					return (
+
+
 
 						<Grid
 			            
 			            	columnCount={columnCount}
-			            	rowCount={rowCount}
+			            	rowCount={rowCount + 1}
 			            	width={width}
 			            	height={height}
 						    columnWidth={columnWidth}  
