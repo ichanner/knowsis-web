@@ -1,8 +1,12 @@
+
+/*
 import "./styles.css"
 
 import React from "react"
 import HeaderBar from "./HeaderBar.jsx"
 import Avatar from "../../../../components/Avatar/Avatar"
+
+
 const CoverHeader = () => {
 
 	return (
@@ -28,7 +32,7 @@ const CoverHeader = () => {
 						<div> 45 Documents </div>
 
 					</div>
-					
+
 				</div>
 
 
@@ -46,3 +50,4 @@ const CoverHeader = () => {
 
 
 export default CoverHeader 
+*/

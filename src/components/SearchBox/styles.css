@@ -1,38 +1,30 @@
-
-
-
-.search-box-input {
-
+.search-box__input {
     border-radius: 10px; /* Semi-rounded corners */
     padding-left: .5rem;
     background-color: var(--input-bg-color);
 }
 
-.search-box-input .MuiInputBase-input {
-   
+.search-box__input .MuiInputBase-input {
 	color: var(--input-color);
     font-size: var(--font-size);
     height: .5rem; /* Fixed height for uniform appearance */
     padding:1rem;
 }
 
-
-.search-box-input .MuiInputBase-input::placeholder {
+.search-box__input .MuiInputBase-input::placeholder {
     color: var(--input-color);
     opacity: 1; /* Fully opaque (Material-UI sometimes sets this lower) */
 }
 
-.search-box-icon {
-
+.search-box__icon {
 	width: var(--icon-size);;
 	height: var(--icon-size);;
 	color: var(--input-color);
 }
 
-.search-box-input.Mui-focused {
+.search-box__input.Mui-focused {
 
     border-color: blue; /* Blue border on focus */
-
     box-shadow: 0 0 0 2px rgba(0, 115, 230, 0.2); /* Glowing effect on focus */
 }
 

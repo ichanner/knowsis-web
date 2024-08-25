@@ -10,12 +10,11 @@ const authReducer = createSlice({
 
 		isAuthenticated: true, //Set to true by default just for now
 		user: null,
-		loading: false,
+		pending: false,
 		error: null
 	},
 
 	reducers:{} // Define actions and reducers here
-
 })
 
 // Selector to access the auth state

@@ -1,0 +1,51 @@
+@import url('../../../../assets/styles/colors.css');
+
+.tool-bar__container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.tool-bar__child-container { 
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	margin-top: 1rem;
+}
+
+.tool-bar__group {
+	display: flex;
+	width: 30%;
+	align-items: center;
+	gap: 1rem;
+}
+
+.tool-bar__search-theme {
+	--input-color: var(--gray-400); 
+	--input-bg-color: var(--gray-750); 
+	--icon-size: 1.5rem;
+	--font-size: 1rem;
+}
+
+.tool-bar__sort-box-colors {
+	--sort-box-bg-color: var(--gray-750);
+	--sort-box-hover-color: var(--gray-700);
+	--sort-box-color: var(--gray-400);
+}
+
+.tool-bar__tab-colors {
+	--tab-color: var(--gray-300); 
+	--tab-bg-color: var(--gray-700); 
+	--selected-tab-color: var(--gray-700); 
+	--selected-tab-bg-color: var(--gray-100); 
+}
+
+.tool-bar__seperator {
+	background-color: var(--gray-500);
+	margin-top: .5rem;
+	height: .5px;
+	border-radius: 10px;
+	width: 100%;
+}

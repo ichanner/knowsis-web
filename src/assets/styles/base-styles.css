@@ -1,0 +1,7 @@
+@import url('./colors.css');
+
+body{
+	
+	background-color: var(--gray-800);
+	font-family: Arial, sans-serif; /* temporary */
+}

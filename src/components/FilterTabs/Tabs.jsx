@@ -5,6 +5,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { styled } from '@mui/material/styles';
 
+/*CSS FILE*/
 const StyledTab = styled(Tab)(({ theme }) => ({
               
   width: 'auto', // Responsive width
@@ -14,7 +15,6 @@ const StyledTab = styled(Tab)(({ theme }) => ({
   backgroundColor: 'var(--tab-bg-color)', // Custom background color
   textTransform: 'none', // No uppercase
   '&.MuiTab-root':{
-
     padding: '1.2rem',
     height: '.5rem',
     minHeight: '100%'
@@ -35,7 +35,6 @@ const FilterTabs = ({parentCallback, tabs, color_scheme}) => {
     if(parentCallback){
 
       parentCallback(newValue)
-
     }
 
     setValue(newValue);
@@ -44,7 +43,7 @@ const FilterTabs = ({parentCallback, tabs, color_scheme}) => {
 
   return (
 
-    < > 
+    <> 
 
       <Tabs 
 
@@ -52,8 +51,8 @@ const FilterTabs = ({parentCallback, tabs, color_scheme}) => {
         onChange={handleChange} 
         variant="scrollable" 
         scrollButtons="auto" 
-        sx={{display: 'flex', minHeight: '.5rem', alignItems: 'center'}}
-        className={`${color_scheme}`}  
+        sx={{display: 'flex', minHeight: '.5rem', alignItems: 'center'}} /* css file */ 
+        className={color_scheme}
 
       >
 

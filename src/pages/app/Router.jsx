@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "./Home"
+import Dashboard from "./Dashboard"
 
 /**
  * Application Router
@@ -23,7 +23,7 @@ export default(()=>{
 
 		<Routes>
 
-			<Route path="/:library_id" element={ <Home/> }/>
+			<Route path="/:library_id" element={ <Dashboard/> }/>
 
 		</Routes>
 		

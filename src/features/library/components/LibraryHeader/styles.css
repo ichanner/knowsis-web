@@ -1,0 +1,35 @@
+
+.header-banner-container{
+
+  display: flex;
+  flex-direction: col;
+  gap: 2rem;
+  align-items: center;
+}
+
+.header-banner-cover {
+
+  border-radius: 10%; /* Roundish corners */
+  width: 10vw; /* Width as a percentage of the viewport width */
+  height: 10vw; /* Height equal to the width to maintain a square */
+}
+
+
+.header-banner-title {
+
+	color: var(--gray-100);
+	font-size: 4vw;
+	margin: 0;
+	margin-top: 1.3rem;
+	pointer-events: none;
+}
+
+.header-banner-info-container{
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: .3rem;
+	font-size: .8vw;
+	color: var(--gray-400);
+}

@@ -1,0 +1,1 @@
+export const TAB_HEIGHT = 100;  // Aprox height value for library tab 

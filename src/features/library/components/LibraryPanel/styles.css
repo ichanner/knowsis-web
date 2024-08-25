@@ -1,0 +1,124 @@
+@import url('../../../../assets/styles/colors.css');
+
+/* Container styles */
+.library__container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--gray-900);
+  padding: 1rem;
+  overflow-y: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: auto;
+  height: 100vh;
+}
+
+/* Search box colors */
+.library__search-colors {
+  --input-color: var(--gray-500);
+  --input-bg-color: var(--gray-800);
+  --icon-size: 1.5rem;
+  --font-size: 1rem;
+}
+
+.library__search-container {
+  margin-bottom: .5rem;
+  display: flex;
+  flex-direction: row;
+}
+
+/* Panel styles */
+.library__panel-header {
+  display: flex;
+  flex-direction: row;
+  width: 15vw;
+  min-width: 13rem;
+  justify-content: space-between;
+  padding: 0.5rem; /* Increased padding for better spacing */
+}
+
+.library__panel-container {
+  display: flex;
+  padding-left: 0.325rem;
+  padding-right: 0.325rem;
+  align-items: center;
+}
+
+.library__panel-group {
+  display: flex;
+  justify-content: start;
+  gap: .5rem;
+  flex-direction: row;
+  align-items: center;
+}
+
+.library__panel-btn {
+  border-radius: .625rem;
+  padding: 0.4rem; /* Slightly increased padding for better visual balance */
+  height: 1.3rem; /* Increased height for more proportionate buttons */
+  width: 1.3rem; /* Increased width for more proportionate buttons */
+  color: var(--white);
+}
+
+.library__panel-btn:hover {
+  cursor: pointer;
+  background-color: var(--gray-800);
+}
+
+.library__panel-label {
+  font-size: 1.2rem; /* Reduced font size slightly for better alignment */
+  color: var(--white);
+}
+
+.library__panel-icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  color: var(--white);
+}
+
+
+.library__panel-group:hover .library__panel-icon,
+.library__panel-group:hover .library__panel-label {
+  cursor: pointer;
+  color: var(--gray-400);
+}
+
+/* Tab styles */
+.library__tab-container {
+  display: flex;
+  align-items: center; /* Center the content vertically */
+  padding: 0.625rem;
+  border-radius: 0.125rem;
+}
+
+.library__tab-container--collapsed {
+  padding: .4rem;
+  border-radius: 0.625rem;
+  width: 50px; /* Image must be 50x50 */
+  display: flex;
+}
+
+.library__tab-container--collapsed:hover,
+.library__tab-container--collapsed--selected,
+.library__tab-container:hover,
+.library__tab-container--selected {
+  cursor: pointer;
+  background-color: var(--gray-800); /* Add background color if needed */
+}
+
+.library__tab-name {
+  font-size: 1rem;
+  color: var(--gray-200);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 1rem; /* Space between image and text */
+}
+
+.library__tab-cover {
+  border-radius: 10%; /* Roundish corners */
+  width: 3rem; /* Fixed width for a square image */
+  height: 3rem; /* Fixed height for a square image */
+  object-fit: cover; /* Ensures the image covers the entire area */
+}

@@ -1,32 +1,31 @@
-
+import "./styles.css"
 import React, {useState} from "react"
 import Icon from '@mdi/react';
-import {mdiMagnify, mdiSortAlphabeticalVariant, mdiSortClockAscending, mdiSortClockDescending, mdiFormatListBulleted } from '@mdi/js'
+import {
+	mdiSortAlphabeticalVariant, 
+	mdiSortClockAscending, 
+	mdiSortClockDescending 
+} from '@mdi/js'
 import DropDownAnchor from "../../components/Dropdown/DropdownAnchor"
 import DropDownInput from "../../utils/DropdownInput"
 
-
-
-
-
 const SortBox = ({color_scheme}) => {
 
-
 	const [label, setLabel] = useState('Latest')
-	const [path, setPath] = useState(mdiSortClockAscending)
+	const [icon, setIcon] = useState(mdiSortClockAscending)
 
-	let SortBoxButton = (props) => {
+    // Component for the anchor element of the dropdown
+	const SortBoxAnchor = (props) => {
 
 		return (
 
-			<div {...props} className={`header-bar-sort-box-container ${props.color_scheme}`}>
+			<div {...props} className={`sort-box__container ${color_scheme}`}>
 
-				<div className='header-bar-sort-box-label'> {label} </div>
+				<div className='sort-box__label'> {label} </div> {/* Display the current label */}
 
-				<Icon className='header-bar-sort-box-icon' path={path} />
+				<Icon className='sort-box__icon' path={icon} />. {/* Display the current icon */}
 
 			</div>
-
 		)
 	}
 
@@ -34,25 +33,30 @@ const SortBox = ({color_scheme}) => {
 
 		<DropDownAnchor
 
-	        AnchorEl={SortBoxButton}
-	        anchor_orgin_vertical='bottom'
+	        AnchorEl={SortBoxAnchor} 
+	        anchor_orgin_vertical='bottom' // Dropdown opens below the anchor
 	        buttons={[
 
 	        	DropDownInput("A-Z", mdiSortAlphabeticalVariant, false, false, () => {
-	        		
-	        		setPath(mdiSortAlphabeticalVariant)
+
+	        		setIcon(mdiSortAlphabeticalVariant)
+
 	        		setLabel('Alphabetical')
 
 	        	}),
+
 	        	DropDownInput("Latest", mdiSortClockAscending, false, false, () => {
 
-	        		setPath(mdiSortClockAscending)
+	        		setIcon(mdiSortClockAscending)
+
 	        		setLabel('Latest')
 
 	        	}),
+
 	        	DropDownInput("Oldest", mdiSortClockDescending, false, false, () => {
 
-	        		setPath(mdiSortClockDescending)
+	        		setIcon(mdiSortClockDescending)
+
 	        		setLabel('Oldest')
 
 	        	})
@@ -60,8 +64,6 @@ const SortBox = ({color_scheme}) => {
 	    />
 
 	)
-
-
 }
 
 export default SortBox;

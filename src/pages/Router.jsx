@@ -1,9 +1,11 @@
-import * as React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "../assets/styles/base-styles.css"
+
+import React from "react";
 import AppRouter from "./app/Router";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
 import ProtectedRoute from "./ProtectedRoute"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 /**
  * Main Application Router
