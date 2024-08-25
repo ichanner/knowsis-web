@@ -1,5 +1,5 @@
 import "./styles.css";
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setExpanded, selectListExpanded } from "../../stores/uiSlice.js";
 import { Icon } from "@mdi/react";
@@ -12,6 +12,49 @@ const LibraryPanel = () => {
 
   const dispatch = useDispatch();
   const expanded = useSelector(selectListExpanded);
+
+
+  const handleResize = () => {
+
+    console.log(window.innerWidth)
+   
+    if (window.innerWidth <= 900) {
+     
+      dispatch(setExpanded(false));
+
+    } 
+    else {
+
+      dispatch(setExpanded(true));
+
+    }
+
+  };
+
+  useEffect(() => {
+
+    // Handle resize events
+    const handleThrottledResize = () => {
+
+      requestAnimationFrame(handleResize);
+
+    };
+
+    // Attach the event listener
+    window.addEventListener('resize', handleThrottledResize);
+
+    // Initial check
+    handleResize();
+
+    // Clean up the event listener on component unmount
+    return () => {
+
+      window.removeEventListener('resize', handleThrottledResize);
+
+    };
+
+  }, []);
+
 
   return (
     
@@ -69,7 +112,7 @@ const LibraryPanel = () => {
 
             <div className='library__search-container'>
 
-              <SearchBox placeholder="Search Library" full_width={true} custom_theme='library__search-colors' />
+              <SearchBox placeholder="Search Library" full_width={true} custom_theme='library__search-theme' />
 
             </div>
           }

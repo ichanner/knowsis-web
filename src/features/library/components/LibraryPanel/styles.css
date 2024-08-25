@@ -15,7 +15,7 @@
 }
 
 /* Search box colors */
-.library__search-colors {
+.library__search-theme {
   --input-color: var(--gray-500);
   --input-bg-color: var(--gray-800);
   --icon-size: 1.5rem;
@@ -32,10 +32,10 @@
 .library__panel-header {
   display: flex;
   flex-direction: row;
-  width: 15vw;
+  width: 100%;
   min-width: 13rem;
   justify-content: space-between;
-  padding: 0.5rem; /* Increased padding for better spacing */
+  padding: 0.625rem; /* Increased padding for better spacing */
 }
 
 .library__panel-container {
@@ -55,7 +55,7 @@
 
 .library__panel-btn {
   border-radius: .625rem;
-  padding: 0.4rem; /* Slightly increased padding for better visual balance */
+  padding: 0.2rem; /* Slightly increased padding for better visual balance */
   height: 1.3rem; /* Increased height for more proportionate buttons */
   width: 1.3rem; /* Increased width for more proportionate buttons */
   color: var(--white);

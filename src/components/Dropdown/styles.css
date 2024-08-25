@@ -1,30 +1,46 @@
 @import url('../../assets/styles/colors.css');
 
-.dropdown-menu .MuiPaper-root  {
-
+.dropdown__menu .MuiPaper-root  {
   background-color: var(--gray-900)
 }
 
-.item-icon{
+.dropdown__menu-item{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.dropdown__menu-item:hover{
+  cursor:pointer;
+  background-color: var(--gray-800)
+}
+
+.dropdown__menu-item > * {
   color: var(--white);
+}
+
+.dropdown__menu-item--serious > * {
+  color: var(--red-500);
+}
+
+.dropdown__item-icon{
   height: 1.2rem;
   width: 1.2rem;
 }
 
-.item-label{
-  color: var(--white);
+.dropdown__item-label{
   margin-top:.2rem;
   font-size: .9rem;
   margin-right: 2rem;
-
 }
-.divider{
+
+.dropdown__divider{
   width: 100%; /* Adjust the width as needed */
   height: 0.04rem; /* Thickness of the divider */
   background-color: var(--gray-600); /* Color of the divider */
   border: none; /* Remove the default border */
   margin-top: .3rem;
   margin-bottom: .3rem;
-
 }
 

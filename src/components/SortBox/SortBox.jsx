@@ -9,7 +9,7 @@ import {
 import DropDownAnchor from "../../components/Dropdown/DropdownAnchor"
 import DropDownInput from "../../utils/DropdownInput"
 
-const SortBox = ({color_scheme}) => {
+const SortBox = ({custom_theme}) => {
 
 	const [label, setLabel] = useState('Latest')
 	const [icon, setIcon] = useState(mdiSortClockAscending)
@@ -19,11 +19,11 @@ const SortBox = ({color_scheme}) => {
 
 		return (
 
-			<div {...props} className={`sort-box__container ${color_scheme}`}>
+			<div {...props} className={`sort-box__container ${custom_theme}`}>
 
 				<div className='sort-box__label'> {label} </div> {/* Display the current label */}
 
-				<Icon className='sort-box__icon' path={icon} />. {/* Display the current icon */}
+				<Icon className='sort-box__icon' path={icon} /> {/* Display the current icon */}
 
 			</div>
 		)

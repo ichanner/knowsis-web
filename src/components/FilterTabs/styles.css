@@ -1,28 +1,44 @@
-/* ignore these for now */
+/* Filter Tabs Styles */
 
-
-.mui-tab {
-  width: auto; /* Responsive width */
-  border-radius: 10px; /* Rounded corners */
-  padding: 2px;
-  margin-right: 5px;
-  color: var(--tab-color);
-  background-color: var(--tab-bg-color);
-  text-transform: none;
-
+.MuiTabs-root {
+  display: flex;
+  min-height: .5rem;
+  align-items: center;
 }
 
-.mui-tab.Mui-selected {
-  border-radius: 10px;
-  color: var(--selected-tab-color);
-  background-color: var(--selected-tab-bg-color);
+.MuiTabs-flexContainer {
+  display: flex;
+  gap:.5rem;
 }
 
 .MuiTabs-scrollButtons{
-
   color: var(--tab-color);
 }
 
 .MuiTabs-indicator {
   display: none; /* Removes the underline */
+}
+
+/* Filter Tab Styles */
+
+.filter-tab {
+  width: auto; /* Responsive width */
+  border-radius: 10px; /* Rounded corners */
+  padding: 2px;
+  color: var(--tab-color);
+  background-color: var(--tab-bg-color);
+  text-transform: none;
+}
+
+.MuiTab-root{
+  padding: 1.2rem; /* Hacky, wanted to do 1rem but need to do 1.2 for some reason*/
+  height: .5rem;
+  font-size: var(--tab-font-size);
+  min-height: 100%;
+}
+
+.Mui-selected {
+  border-radius: 10px;
+  color: var(--selected-tab-color);
+  background-color: var(--selected-tab-bg-color);
 }

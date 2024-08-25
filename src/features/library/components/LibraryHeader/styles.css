@@ -1,35 +1,52 @@
 
-.header-banner-container{
-
+.header__container{
   display: flex;
-  flex-direction: col;
-  gap: 2rem;
+  gap: 1rem;
   align-items: center;
+  overflow: hidden;
+  transition: height 0.3s ease;
 }
 
-.header-banner-cover {
-
+.header__cover {
   border-radius: 10%; /* Roundish corners */
   width: 10vw; /* Width as a percentage of the viewport width */
   height: 10vw; /* Height equal to the width to maintain a square */
+  min-width: 6rem;
+  min-height: 6rem;
 }
 
-
-.header-banner-title {
-
-	color: var(--gray-100);
-	font-size: 4vw;
-	margin: 0;
-	margin-top: 1.3rem;
-	pointer-events: none;
+.header__title {
+  color: var(--gray-100);
+  font-size: 4vw;
+  margin: 0;
+  margin-top: 1.3rem;
+  pointer-events: none;
 }
 
-.header-banner-info-container{
+@media screen and (max-width: 900px) {
 
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	gap: .3rem;
-	font-size: .8vw;
-	color: var(--gray-400);
+	.header__title{
+
+		font-size: 2rem;
+	}
+
 }
+
+.header__meta-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: .3rem;
+  font-size: .8rem;
+  color: var(--gray-400);
+}
+
+span:not(.header__username){
+  pointer-events: none;
+}
+
+.header__username:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+

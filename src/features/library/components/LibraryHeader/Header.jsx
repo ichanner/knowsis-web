@@ -1,53 +1,52 @@
-
-/*
 import "./styles.css"
-
 import React from "react"
-import HeaderBar from "./HeaderBar.jsx"
 import Avatar from "../../../../components/Avatar/Avatar"
+import { selectLibraryById } from "../../stores/librarySlice"
+import { useSelector } from "react-redux"
+import { useParams } from 'react-router-dom'
+
+const LibraryHeader = ({scroll_pos}) => {
+
+	const { library_id } = useParams() //Get current library id from URL params
+	const { creator_username, cover_url, document_count } = useSelector(selectLibraryById(library_id)) //Get current library meta
 
 
-const CoverHeader = () => {
+	//new height calculated based on scroll position 
+	const scroll_threshold = 100
+	const initial_height = 30
+	const new_height = Math.max(initial_height - (scroll_pos / scroll_threshold) * 100, 0)
 
 	return (
 
-		<div className='header-container'>
 
-			<div className='header-banner-container'>
+			<div className='header__container' style={{height: `${new_height}%` }}>
 
-				<img className='header-banner-cover' src='https://as1.ftcdn.net/v2/jpg/03/22/86/48/1000_F_322864892_a9akJpH9ilrHakt2xsWyL2FiPm7KAS9b.jpg' />
+				<img className='header__cover' src={cover_url} />
 
 				<div>
 
-					<h1 className='header-banner-title'> Math </h1>
+					<h1 className='header__title'> Math </h1>
 
-					<div className='header-banner-info-container'> 
+					<div className='header__meta-container'> 
 
-						<Avatar size={2}/>
+						<Avatar size={1.5}/>
 
-						<div> Ian C </div>
+						<span className='header__username'> {creator_username} </span>
 
-						<div> &bull; </div>
+						<span> &bull; </span>
 
-						<div> 45 Documents </div>
+						<span> {document_count} Documents </span>
 
 					</div>
 
 				</div>
 
-
 			</div>
 
-			<HeaderBar/>
-
-			<div className='header-seperator'/>
-
-		</div>
 
 	)
 
 }
 
 
-export default CoverHeader 
-*/
+export default LibraryHeader 

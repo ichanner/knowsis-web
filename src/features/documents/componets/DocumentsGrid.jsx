@@ -1,5 +1,5 @@
 import "./styles.css"
-import React, { useRef, Dimensions } from "react";
+import React, { useRef, Dimensions, useState, useCallback, useEffect } from "react";
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { FixedSizeGrid as Grid } from 'react-window';
@@ -8,6 +8,7 @@ import { ROW_HEIGHT, MIN_COLUMN_WIDTH } from "../documentConstants"
 import AutoSizer from 'react-virtualized-auto-sizer';
 import Document from "./Document.jsx";
 import ToolBar from "./ToolBar/ToolBar.jsx";
+import LibraryHeader from "../../library/components/LibraryHeader/Header"
 
 const DocumentsGrid = () => {
 
@@ -21,17 +22,27 @@ const DocumentsGrid = () => {
     // Select the documents from the Redux store using the library_id
 	const documents = useSelector(selectDocumentsFromLibrary(library_id));
 	
+	// State for stroing the scroll position 
+	const [scrollPos, setScrollPos] = useState(0);
+
+  	const handleScroll = useCallback(({scrollTop}) => {
+    	
+    	setScrollPos(scrollTop)
+
+ 
+  	}, [scrollPos]);
 
 	return (
 
-		<div className='documents__list-container'>
+		<div className='documents__grid-container'>
+			
+			<LibraryHeader scroll_pos={scrollPos}/>
 
 			<ToolBar/>
 
 		    {/* AutoSizer component dynamically calculates the available width and height */}
 
 			<AutoSizer>
-
 
 				{({height, width}) => {
 
@@ -53,6 +64,7 @@ const DocumentsGrid = () => {
 			            	rowCount={rowCount}
 			            	width={width}
 			            	height={height}
+			            	onScroll={handleScroll}
 						    columnWidth={columnWidth}  
 						    rowHeight={ROW_HEIGHT} 
 						    

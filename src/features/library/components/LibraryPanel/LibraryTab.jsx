@@ -13,7 +13,7 @@ const LibraryTab = ({ library_id, is_focused }) => {
     const expanded = useSelector(selectListExpanded); // Determine if the library list is expanded or collapsed
 
     // Dynamically generate the class names based on the UI state
-    const tabClassname = classNames({ 
+    const tab_class_names = classNames({ 
   
         'library__tab-container': expanded, 
         'library__tab-container--collapsed': !expanded,
@@ -38,7 +38,7 @@ const LibraryTab = ({ library_id, is_focused }) => {
 
     return ( 
 
-        <div onClick={handleClick} className={tabClassname}>
+        <div onClick={handleClick} className={tab_class_names}>
       
             <img className='library__tab-cover' src={library.cover_url} alt={`${library.name} cover`} />
       

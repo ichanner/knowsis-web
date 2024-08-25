@@ -1,31 +1,57 @@
-.sort-box__container{
-
-	display: flex;
-	background-color: var(--sort-box-bg-color); /*750*/
-	border-radius: 10px;
-	justify-content: center;
-	align-items: center;
-    padding: 1rem;
+.sort-box__container {
+    display: flex;
+    background-color: var(--sort-box-bg-color); /*750*/
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
     height: .5rem;
+    padding: 1rem;
+    overflow: hidden;
+    flex-wrap: nowrap; /* Prevent wrapping */
 }
 
 .sort-box__container:hover{
 
-	cursor: pointer;
-    background-color: var(--sort-box-hover-color); /*700*/
-
+    background-color: var(--sort-box-hover-color);
+    cursor: pointer;
 }
 
-.sort-box__icon{
-
-	color: var(--sort-box-color);
-	width: 1.5rem;
-	height: 1.5rem;
-	margin-left: .5rem;
+.sort-box__label {
+    color: var(--sort-box-color);
+    font-size: var(--sort-box-font-size);
+    white-space: nowrap; /* Prevent the label from wrapping */
 }
 
-.sort-box__label{
+.sort-box__icon {
+    color: var(--sort-box-color);
+    width: var(--sort-box-icon-size);
+    height: var(--sort-box-icon-size);
+    margin-left: .5rem;
+}
 
-	color: var(--sort-box-color);
-	font-size:1.1rem;
+
+.sort-box__label {
+    flex-shrink: 1; /* Allow the label to shrink */
+    min-width: 0; /* Prevents the label from taking up more space than needed */
+    display: inline-block;
+}
+
+.sort-box__icon {
+    flex-shrink: 0; /* Prevents the icon from shrinking */
+}
+
+/* If the container can't fit the label, the label will be hidden */
+.sort-box__label {
+    display: inline-block;
+}
+
+/* Optional: Add ellipsis if the label gets too small */
+.sort-box__label {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/* Hide label if it overflows */
+.sort-box__container:not(:has(.sort-box__label)) .sort-box__label {
+    display: none;
 }

@@ -15,7 +15,8 @@ const ToolBar = () => {
 
 			<div className='tool-bar__child-container'>
 				
-				<Tabs color_scheme='tool-bar__tab-colors' 
+
+				<Tabs custom_theme='tool-bar__tab-theme' 
 					
 					tabs={[ 
 
@@ -26,11 +27,12 @@ const ToolBar = () => {
 					]}
 				/>
 
+
 				<div className='tool-bar__group'> 
 
 					<SearchBox custom_theme={'tool-bar__search-theme'} placeholder={'Search Collection'}/>
 
-					<SortBox color_scheme={'tool-bar__sort-box-colors'}/>
+					<SortBox custom_theme={'tool-bar__sort-box-theme'}/>
 
 				</div>
 
