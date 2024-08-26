@@ -1,6 +1,7 @@
 import "./styles.css"
-import React, { useEffect, useState, useRef } from "react"
+import React, { useEffect, useCallback, useState, useRef } from "react"
 import Avatar from "../../../../components/Avatar/Avatar"
+import useForceUpdate from "../../../../hooks/forceUpdate"
 import { selectLibraryById } from "../../stores/librarySlice"
 import { useSelector } from "react-redux"
 import { useParams } from 'react-router-dom'
@@ -10,30 +11,37 @@ const LibraryHeader = ({scroll_pos}) => {
 
 	const { library_id } = useParams() //Get current library id from URL params
 	const { creator_username, cover_url, document_count, name } = useSelector(selectLibraryById(library_id)) //Get current library meta
+    
+    //Reference to cover 
     const coverRef = useRef(null)  
-    const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+    const forceUpdate = useForceUpdate()
 
-    //new height calculated based on scroll position 
-    const handleResize = () => {
-
-        setScreenWidth(window.innerWidth)
-    }
+    const calculateHeight = useCallback(() => {
+   
+        if (coverRef.current) {
+   
+            const height = coverRef.current.getBoundingClientRect().height;
+   
+            return Math.max(height - (scroll_pos / SCROLL_THRESHOLD) * 100, 0);
+   
+        }
+   
+        return 0; // Fallback value if coverRef is not yet available
+   
+    }, [scroll_pos]);
 
     useEffect(() => {
 
          // Handle resize events
         const handleThrottledResize = () => {
 
-          requestAnimationFrame(handleResize);
-
+          forceUpdate()
         };
 
         // Attach the event listener
         window.addEventListener('resize', handleThrottledResize);
 
-        // Initial check
-        handleResize();
-
+  
         // Clean up the event listener on component unmount
         return () => {
 
@@ -43,7 +51,7 @@ const LibraryHeader = ({scroll_pos}) => {
 
     }, [])
 
-    const new_height = Math.max( coverRef.current?.getBoundingClientRect().height  - (scroll_pos / SCROLL_THRESHOLD) * 100, 0)
+    const new_height = calculateHeight()
 
 	return (
 

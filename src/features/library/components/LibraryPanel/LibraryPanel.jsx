@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setExpanded, selectListExpanded } from "../../stores/uiSlice.js";
 import { Icon } from "@mdi/react";
 import { mdiPlus, mdiArrowCollapseAll, mdiBookMultiple } from '@mdi/js';
+import { EXPANSION_WIDTH_THRESHOLD } from "../../libraryConstants"
 import Collapse from '@mui/material/Collapse';
 import LibraryList from "./LibraryList";
 import SearchBox from "../../../../components/SearchBox/SearchBox";
@@ -14,9 +15,8 @@ const LibraryPanel = () => {
   const expanded = useSelector(selectListExpanded);
 
   const handleResize = () => {
-
    
-    if (window.innerWidth <= 900) {
+    if (window.innerWidth <= EXPANSION_WIDTH_THRESHOLD) {
      
       dispatch(setExpanded(false));
 

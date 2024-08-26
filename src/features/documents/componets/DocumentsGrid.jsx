@@ -25,12 +25,10 @@ const DocumentsGrid = () => {
 	// State for stroing the scroll position 
 	const [scrollPos, setScrollPos] = useState(0);
 
-	// Referene to document grid 
 
   	const handleScroll = useCallback(({scrollTop}) => {
     
-    	setScrollPos(scrollTop) 
-
+    	setScrollPos(scrollTop)
 
   	}, [scrollPos]);
 
@@ -74,9 +72,10 @@ const DocumentsGrid = () => {
 			          	>
 
 				          	{({ rowIndex, columnIndex, style}) => {
-
+			
+				       
 								// Calculate the index of the document in the documents array
-						  		const index = rowIndex * columnCount + columnIndex;
+						  		const index = (rowIndex ) * columnCount + columnIndex;
 
 						  		if (index >= documents.length) {
 						           
@@ -85,7 +84,12 @@ const DocumentsGrid = () => {
 
 						  		const document_id = documents[index]  
 
-						  		return <Document style={style} document_id={document_id} library_id={library_id} /> 
+						  		return (
+						  			
+
+						  			<Document style={style} document_id={document_id} library_id={library_id} /> 
+
+						  		)
 
   							}}
 
