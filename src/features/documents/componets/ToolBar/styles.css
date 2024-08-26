@@ -19,7 +19,6 @@
 .tool-bar__group {
   display: flex;
   justify-content: flex-end;
-  width: 30%;
   gap: .5rem;
 }
 
