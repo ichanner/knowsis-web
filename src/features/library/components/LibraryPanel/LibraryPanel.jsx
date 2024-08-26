@@ -13,10 +13,8 @@ const LibraryPanel = () => {
   const dispatch = useDispatch();
   const expanded = useSelector(selectListExpanded);
 
-
   const handleResize = () => {
 
-    console.log(window.innerWidth)
    
     if (window.innerWidth <= 900) {
      

@@ -10,7 +10,7 @@ const librarySlice = createSlice({
 
 		library:[
 
-			{ id: '1', name: "Math", cover_url: 'https://as1.ftcdn.net/v2/jpg/03/22/86/48/1000_F_322864892_a9akJpH9ilrHakt2xsWyL2FiPm7KAS9b.jpg', document_count: 45, creator_username: 'Ian Channer' },
+			{ id: '1', name: "Math And Fun", cover_url: 'https://as1.ftcdn.net/v2/jpg/03/22/86/48/1000_F_322864892_a9akJpH9ilrHakt2xsWyL2FiPm7KAS9b.jpg', document_count: 45, creator_username: 'Ian Channer' },
 			{ id: '2', name: "Math", cover_url: 'https://as1.ftcdn.net/v2/jpg/03/22/86/48/1000_F_322864892_a9akJpH9ilrHakt2xsWyL2FiPm7KAS9b.jpg', document_count: 45, creator_username: 'Ian Channer' },
 			{ id: '3', name: "Math", cover_url: 'https://as1.ftcdn.net/v2/jpg/03/22/86/48/1000_F_322864892_a9akJpH9ilrHakt2xsWyL2FiPm7KAS9b.jpg', document_count: 45, creator_username: 'Ian Channer' },
 			{ id: '4', name: "Math", cover_url: 'https://as1.ftcdn.net/v2/jpg/03/22/86/48/1000_F_322864892_a9akJpH9ilrHakt2xsWyL2FiPm7KAS9b.jpg', document_count: 45, creator_username: 'Ian Channer' },

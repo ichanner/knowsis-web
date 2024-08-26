@@ -1,8 +1,11 @@
-
-.header__container{
+.header__container {
   display: flex;
+  flex-wrap: wrap; /* Allows content to wrap within the container */
   gap: 1rem;
   align-items: center;
+  background-color: var(--gray-900);
+  border-radius: 10px;
+  width: 100%;
   overflow: hidden;
   transition: height 0.3s ease;
 }
@@ -10,43 +13,46 @@
 .header__cover {
   border-radius: 10%; /* Roundish corners */
   width: 10vw; /* Width as a percentage of the viewport width */
-  height: 10vw; /* Height equal to the width to maintain a square */
   min-width: 6rem;
   min-height: 6rem;
+  flex-shrink: 0; /* Prevents the cover image from shrinking too much */
+}
+
+.header__text-container{
+
+  margin-top: 1rem;
 }
 
 .header__title {
   color: var(--gray-100);
-  font-size: 4vw;
+  font-size: 2rem; /* More control with rem/em */
   margin: 0;
-  margin-top: 1.3rem;
   pointer-events: none;
+  flex-grow: 1; /* Allows the title to grow and fill space */
+  min-width: 10rem; /* Ensures the title doesn't get too small */
 }
 
 @media screen and (max-width: 900px) {
-
-	.header__title{
-
-		font-size: 2rem;
-	}
-
+  .header__title {
+    font-size: 1.5rem; /* Adjusted font size for smaller screens */
+  }
 }
 
-.header__meta-container{
+.header__meta-container {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: .3rem;
-  font-size: .8rem;
+  gap: .5rem;
+  font-size: 0.8rem;
   color: var(--gray-400);
+  flex-wrap: wrap; /* Allows meta items to wrap on smaller screens */
 }
 
-span:not(.header__username){
+span:not(.header__username) {
   pointer-events: none;
 }
 
-.header__username:hover{
+.header__username:hover {
   text-decoration: underline;
   cursor: pointer;
 }
-
