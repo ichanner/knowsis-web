@@ -107,13 +107,30 @@
   background-color: var(--gray-800); /* Add background color if needed */
 }
 
+.library__tab-info-container {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: .3rem;
+  margin-left: 1rem; /* Space between image and text */
+
+}
+
 .library__tab-name {
   font-size: 1rem;
   color: var(--gray-200);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-left: 1rem; /* Space between image and text */
+}
+
+
+.library__tab-username{
+  color: var(--gray-300);
+  font-size: .8rem;
+  white-space: no-wrap;
+  text-overflow: ellipsis;
 }
 
 .library__tab-cover {

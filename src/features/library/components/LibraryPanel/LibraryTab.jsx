@@ -42,7 +42,17 @@ const LibraryTab = ({ library_id, is_focused }) => {
       
             <img className='library__tab-cover' src={library.cover_url} alt={`${library.name} cover`} />
       
-            {expanded && <div className='library__tab-name'>{library.name}</div>}
+            {expanded && 
+
+                <div className='library__tab-info-container'>
+
+                    <span className='library__tab-name'>{library.name}</span>
+
+                    <span className='library__tab-username'>{library.creator_username}</span>
+
+                </div>
+
+            }
       
         </div> 
     );
