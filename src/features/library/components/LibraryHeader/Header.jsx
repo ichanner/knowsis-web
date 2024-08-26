@@ -38,6 +38,9 @@ const LibraryHeader = ({scroll_pos}) => {
           forceUpdate()
         };
 
+        //Initial force update to make the header show
+        forceUpdate()
+
         // Attach the event listener
         window.addEventListener('resize', handleThrottledResize);
 
