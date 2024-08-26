@@ -26,11 +26,11 @@ const DocumentsGrid = () => {
 	const [scrollPos, setScrollPos] = useState(0);
 
 	// Referene to document grid 
-	const gridRef = useRef(null)
 
   	const handleScroll = useCallback(({scrollTop}) => {
     
     	setScrollPos(scrollTop) 
+
 
   	}, [scrollPos]);
 
@@ -63,7 +63,7 @@ const DocumentsGrid = () => {
 						<Grid
 			            
 			            	columnCount={columnCount}
-			            	ref={gridRef}
+			            	and overscanRowCount={10}
 			            	rowCount={rowCount}
 			            	width={width}
 			            	height={height}
