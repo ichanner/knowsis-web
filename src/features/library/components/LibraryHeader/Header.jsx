@@ -39,7 +39,8 @@ const LibraryHeader = ({scroll_pos}) => {
         };
 
         //Initial force update to make the header show
-        forceUpdate()
+
+        window.addEventListener('load', forceUpdate)
 
         // Attach the event listener
         window.addEventListener('resize', handleThrottledResize);
@@ -47,6 +48,8 @@ const LibraryHeader = ({scroll_pos}) => {
   
         // Clean up the event listener on component unmount
         return () => {
+
+          window.removeEventListener('load', forceUpdate);
 
           window.removeEventListener('resize', handleThrottledResize);
 
