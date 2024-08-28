@@ -1,0 +1,22 @@
+.upload-box__container {
+    display: flex;
+    background-color: var(--upload-box-bg-color);
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    height: .5rem; /* Adjust height to better fit the icon */
+    padding: 1.3rem; /* Adjust padding as needed */
+    overflow: hidden;
+    flex-wrap: nowrap;
+}
+
+.upload-box__icon {
+    color: var(white);
+    width: var(1rem);
+    height: var(1rem);
+}
+
+.upload-box__container:hover {
+    background-color: var(darkgray);
+    cursor: pointer;
+}

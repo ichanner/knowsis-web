@@ -5,6 +5,7 @@ import Tabs from "../../../../components/FilterTabs/Tabs.jsx"
 import TabInput from "../../../../utils/TabInput"
 import SearchBox from "../../../../components/SearchBox/SearchBox"
 import SortBox from "../../../../components/SortBox/SortBox"
+import UploadBox from "../../../../components/UploadBox/UploadBox.jsx"
 
 
 const ToolBar = () => {
@@ -29,6 +30,8 @@ const ToolBar = () => {
 
 
 				<div className='tool-bar__group'> 
+
+					<UploadBox custom_theme ={'tool-bar__upload-theme'}/>
 
 					<SearchBox custom_theme={'tool-bar__search-theme'} placeholder={'Search Collection'}/>
 
